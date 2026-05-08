@@ -18,7 +18,7 @@ try:
     from sentence_transformers import SentenceTransformer
     from llama_cpp import Llama
 except ImportError:
-    print("❌ Error: Missing dependencies. Run: pip install llama-cpp-python sentence-transformers faiss-cpu numpy")
+    print(" Error: Missing dependencies. Run: pip install llama-cpp-python sentence-transformers faiss-cpu numpy")
     sys.exit(1)
 
 class SyntberAI:
@@ -86,7 +86,7 @@ class SyntberAI:
         """Checks for the GGUF, Index, and DB files."""
         missing = [p for p in [self.db_path, self.index_path, self.llm_path] if not os.path.exists(p)]
         if missing:
-            print(f"\n❌ CRITICAL ERROR: Missing assets in root folder: {missing}")
+            print(f"\n CRITICAL ERROR: Missing assets in root folder: {missing}")
             print("Please ensure your Google Drive files are next to this script.")
             sys.exit(1)
 
@@ -137,7 +137,7 @@ if __name__ == "__main__":
     print(f"\n{'='*50}")
     print(f" {ai.ai_name.upper()} V1.2.2 - LOCAL & PRIVATE ")
     print(f"{'='*50}")
-    print("DISCLAIMER: Syntber is an AI and can be wrong.")
+    print(" ⚠️  DISCLAIMER: Syntber is an AI and can be wrong.")
     print(" Always verify mathematical and scientific outputs.")
     print(" This software is NOT a substitute for professional")
     print(" medical, legal, or engineering advice.")

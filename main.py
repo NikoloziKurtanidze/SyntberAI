@@ -86,7 +86,7 @@ class SyntberAI:
         """Checks for the GGUF, Index, and DB files."""
         missing = [p for p in [self.db_path, self.index_path, self.llm_path] if not os.path.exists(p)]
         if missing:
-            print(f"\n CRITICAL ERROR: Missing assets in root folder: {missing}")
+            print(f"\n❌ CRITICAL ERROR: Missing assets in root folder: {missing}")
             print("Please ensure your Google Drive files are next to this script.")
             sys.exit(1)
 
@@ -112,8 +112,9 @@ class SyntberAI:
         facts = self.search(user_input) if len(input_cleaned) > 3 else []
         
         sys_msg = (
-            f"You are {self.ai_name}, a logic-driven AI. "
+            f"You are {self.ai_name}, a logic-driven AI created by Nikolozi and LLm built by Microsoft. "
             "Use ONLY plain text for math. No LaTeX. "
+            "Never give out medical advice, instead advice to seek profesional help."
             "Prioritize user variables like g=10."
         )
         if facts:
